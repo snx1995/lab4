@@ -119,24 +119,24 @@ public class Test {
 				}
 			}
 		}
-		// System.out.println(txtString);
-		txtString = txtString.replaceAll("[\\pP]", "-"); // 正则表达式
-		txtString = txtString.replaceAll("[\\pZ]", "-"); // 正则表达式
-		txtString = txtString.replaceAll("\t", "-");
-		txtString = txtString.replaceAll("\n", "-");
-		// System.out.println(txtString);
-		StringBuffer sb = new StringBuffer();
-		for (int i = 0; i < txtString.length(); i++) {
-			char c = txtString.charAt(i);
-			if ((c <= 'z' && c >= 'a') || 
-					(c <= 'Z' && c >= 'A') || (c == '-')) {
-				sb.append(c);
-			}
-		}
-		// System.out.println(sb);
-		txtString = sb.toString();
-		// System.out.println(txtString);
-		String[] arr = txtString.split("-");
+//		System.out.println(txtString);
+//		txtString = txtString.replaceAll("[\\pP]", "-"); // 正则表达式
+//		txtString = txtString.replaceAll("[\\pZ]", "-"); // 正则表达式
+//		txtString = txtString.replaceAll("\t", "-");
+//		txtString = txtString.replaceAll("\n", "-");
+//		// System.out.println(txtString);
+//		StringBuffer sb = new StringBuffer();
+//		for (int i = 0; i < txtString.length(); i++) {
+//			char c = txtString.charAt(i);
+//			if ((c <= 'z' && c >= 'a') || 
+//					(c <= 'Z' && c >= 'A') || (c == '-')) {
+//				sb.append(c);
+//			}
+//		}
+//		// System.out.println(sb);
+//		txtString = sb.toString();
+//		// System.out.println(txtString);
+		String[] arr = txtString.split("[^a-zA-Z]+");//简单方法！！！
 		List<String> retStr = new LinkedList<String>();
 
 		// StringBuffer retStr = new StringBuffer();
